@@ -1,0 +1,34 @@
+{% extends 'management_app/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row text-center mt-4">
+            <h6 class="card-title">{{ employee.department_id.department_name }}-ს თანამშრომელი</h6>
+            <div class="col-3 mt-4">
+                <img src="{{ employee.image.url }}">
+            </div>
+            <div class="col-3 mt-4">
+                <ul class="list-group">
+                    <li class="list-group-item">სახელი: {{ employee.first_name }}</li>
+                    <li class="list-group-item">გვარი: {{ employee.last_name }}</li>
+                    <li class="list-group-item">პირადი ნომერი: {{ employee.person_number }}</li>
+                    <li class="list-group-item">მოქალაქეობა: {{ employee.citizenship }}</li>
+                    <li class="list-group-item">სქესი: {{ employee.gender }}</li>
+                    <li class="list-group-item">დაბადების თარიღი: {{ employee.date_of_birth }}</li>
+                    <li class="list-group-item">მოქმედების ვადა: {{ employee.date_expiry }}</li>
+                    <li class="list-group-item">ბარათის ნომერი: {{ employee.card_number }}</li>
+                    <li class="list-group-item">დაბადების ადგილი: {{ employee.place_of_birth }}</li>
+                    <li class="list-group-item">გაცემის თარიღი: {{ employee.date_of_issue }}</li>
+                    <li class="list-group-item">გამცემი ორგანო: {{ employee.issueing_authority }}</li>
+                </ul>
+            </div>
+            <h4 class="card-title text-center mt-4">პიროვნული თვისებები</h4>
+            <div class="container">
+                <ul class="list-group-item">
+                    {% for quality in employee.personal_quality.all %}
+                        <li class="list-group-item">{{ quality.quality }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
