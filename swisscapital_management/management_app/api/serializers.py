@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import Employee
+from ..models import Department, Employee, PersonalQuality
 
 
 class EmployeeSerializer(serializers.ModelSerializer):
@@ -15,4 +15,16 @@ class RetrieveEmployeeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Employee
+        fields = "__all__"
+
+
+class DepartmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Department
+        fields = "__all__"
+
+
+class PersonalQualitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PersonalQuality
         fields = "__all__"

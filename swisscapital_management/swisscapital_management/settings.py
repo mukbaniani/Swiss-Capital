@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "management_app",
     "rest_framework",
+    "crispy_forms",
 ]
 
 REST_FRAMEWORK = {
@@ -134,3 +135,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

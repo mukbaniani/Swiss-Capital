@@ -1,0 +1,12 @@
+{% extends 'management_app/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <div class="container">
+        <h6 class="text-center mt-4">თანამშრომლის დამატება</h6>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn btn-success mt-4 w-100">დამატება</button>
+        </form>
+    </div>
+{% endblock content %}

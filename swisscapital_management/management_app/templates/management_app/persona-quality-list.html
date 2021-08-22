@@ -4,22 +4,18 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">სახელი</th>
-            <th scope="col">გვარდი</th>
-            <th scope="col">პირადი ნომერი</th>
+            <th scope="col">პიროვნული თვისება</th>
             <th scope="col">#</th>
           </tr>
         </thead>
         <tbody>
-          {% for employee in employees %}  
+          {% for quality in personal_qualities %}  
             <tr>
-                <td>{{ employee.first_name }}</td>
-                <td>{{ employee.last_name }}</td>
-                <td>{{ employee.person_number }}</td>
+                <td>{{ quality.quality }}</td>
                 <th>
-                  <a href="{% url 'detail-info' employee.id %}" class="btn btn-info">მეტი ინფორმაცია</a>
-                  <a href="{% url 'delete-employee' employee.id %}" class="btn btn-danger">წაშლა</a>
-                  <a href="{% url 'update-employee' employee.id %}" class="btn btn-warning">განახლება</a>
+                    <a href="{% url 'create-personal-quality' %}" class="btn btn-success">დამატება</a>
+                  <a href="{% url 'delete-personal-quality' quality.id %}" class="btn btn-danger">წაშლა</a>
+                  <a href="{% url 'update-personal-quality' quality.id %}" class="btn btn-warning">განახლება</a>
                 </th>
             </tr>
           {% endfor %}

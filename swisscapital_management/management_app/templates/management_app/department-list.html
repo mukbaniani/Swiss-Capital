@@ -4,22 +4,18 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">სახელი</th>
-            <th scope="col">გვარდი</th>
-            <th scope="col">პირადი ნომერი</th>
+            <th scope="col">დეპარტამენტის სახელი</th>
             <th scope="col">#</th>
           </tr>
         </thead>
         <tbody>
-          {% for employee in employees %}  
+          {% for department in departments %}  
             <tr>
-                <td>{{ employee.first_name }}</td>
-                <td>{{ employee.last_name }}</td>
-                <td>{{ employee.person_number }}</td>
+                <td>{{ department.department_name }}</td>
                 <th>
-                  <a href="{% url 'detail-info' employee.id %}" class="btn btn-info">მეტი ინფორმაცია</a>
-                  <a href="{% url 'delete-employee' employee.id %}" class="btn btn-danger">წაშლა</a>
-                  <a href="{% url 'update-employee' employee.id %}" class="btn btn-warning">განახლება</a>
+                    <a href="{% url 'create-department' %}" class="btn btn-success">დამატება</a>
+                  <a href="{% url 'delete-department' department.id %}" class="btn btn-danger">წაშლა</a>
+                  <a href="{% url 'update-department' department.id %}" class="btn btn-warning">განახლება</a>
                 </th>
             </tr>
           {% endfor %}
