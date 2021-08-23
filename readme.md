@@ -8,7 +8,7 @@ enter django bash
 
 change directory
 
-### swisscapital_management
+### cd swisscapital_management
 
 make migrations
 
@@ -40,7 +40,7 @@ create dummy employee
 
 # Instanation local machine
 
-** requirements **
+**requirements**
 
 - python 3.6, 3.7, 3.8, 3.9
 

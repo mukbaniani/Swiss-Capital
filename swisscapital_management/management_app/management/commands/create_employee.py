@@ -1,7 +1,6 @@
 from django.core.management import BaseCommand
 from faker import Faker
 from ...models import Employee, Department, PersonalQuality
-import random
 from django.utils import timezone
 
 
@@ -17,10 +16,14 @@ class Command(BaseCommand):
                 last_name=faker.unique.last_name(),
                 citizenship=faker.unique.country(),
                 gender="მ",
-                person_number=random.randint(11111111111, 999999999999),
+                person_number=faker.unique.pyint(
+                    min_value=11111111111, max_value=99999999999
+                ),
                 date_of_birth=timezone_now,
                 date_expiry=timezone_now,
-                card_number=random.randint(11111111111, 999999999999),
+                card_number=faker.unique.pystr_format(
+                    string_format="##??#####", letters="ABCDEFGHIJKLMNOPQRSTUVWXVZ"
+                ),
                 place_of_birth=faker.unique.city(),
                 date_of_issue=timezone_now,
                 issueing_authority="იუსტიციის სახლი",
