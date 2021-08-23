@@ -1,7 +1,8 @@
 {% extends 'management_app/base.html' %}
 {% block content %}
     <div class="container">
-      <table class="table">
+      <a href="{% url 'create-department' %}" class="btn btn-success mt-4">დეპარტამენტის დამატება</a>
+      <table class="table mt-4">
         <thead>
           <tr>
             <th scope="col">დეპარტამენტის სახელი</th>
@@ -13,7 +14,6 @@
             <tr>
                 <td>{{ department.department_name }}</td>
                 <th>
-                    <a href="{% url 'create-department' %}" class="btn btn-success">დამატება</a>
                   <a href="{% url 'delete-department' department.id %}" class="btn btn-danger">წაშლა</a>
                   <a href="{% url 'update-department' department.id %}" class="btn btn-warning">განახლება</a>
                 </th>

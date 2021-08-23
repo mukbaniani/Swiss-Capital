@@ -1,7 +1,8 @@
 {% extends 'management_app/base.html' %}
 {% block content %}
     <div class="container">
-      <table class="table">
+      <a href="{% url 'create-personal-quality' %}" class="btn btn-success mt-4">პიროვნული თვისების დამატება</a>
+      <table class="table mt-4">
         <thead>
           <tr>
             <th scope="col">პიროვნული თვისება</th>
@@ -13,7 +14,6 @@
             <tr>
                 <td>{{ quality.quality }}</td>
                 <th>
-                    <a href="{% url 'create-personal-quality' %}" class="btn btn-success">დამატება</a>
                   <a href="{% url 'delete-personal-quality' quality.id %}" class="btn btn-danger">წაშლა</a>
                   <a href="{% url 'update-personal-quality' quality.id %}" class="btn btn-warning">განახლება</a>
                 </th>

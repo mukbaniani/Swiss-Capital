@@ -16,6 +16,13 @@ class RetrieveEmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
         fields = "__all__"
+        depth = 1
+
+
+class CreateEmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employee
+        fields = "__all__"
 
 
 class DepartmentSerializer(serializers.ModelSerializer):

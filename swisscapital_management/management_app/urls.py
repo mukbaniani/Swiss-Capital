@@ -17,6 +17,11 @@ router.register(
     api_view.PersonalQualityView,
     basename="personal-quality",
 )
+router.register(
+    "api/employee",
+    api_view.EmployeeView,
+    basename="employee-crud",
+)
 
 urlpatterns = [
     path("", views.EmployeeList.as_view(), name="employee-list"),
@@ -67,13 +72,5 @@ urlpatterns = [
         "update-personal-quality/<int:pk>",
         views.UpdatePersonalQuality.as_view(),
         name="update-personal-quality",
-    ),
-    path(
-        "api/employee-list", api_view.EmployeeList.as_view(), name="api-employee-list"
-    ),
-    path(
-        "api/employee-retrieve/<int:pk>",
-        api_view.RetrieveEmployee.as_view(),
-        name="api-retrieve-employee",
     ),
 ] + router.urls

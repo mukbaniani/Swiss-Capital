@@ -8,7 +8,7 @@ enter django bash
 
 change directory
 
-### swisscapital_management
+### cd swisscapital_management
 
 make migrations
 

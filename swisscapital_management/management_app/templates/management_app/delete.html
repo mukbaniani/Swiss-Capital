@@ -5,6 +5,6 @@
             <p>ნამდვილად გსურთ წაშლა "{{ object }}"?</p>
             <input type="submit" value="წაშლა" class="btn btn-danger w-100">
         </form>
-        <a class="btn btn-success w-100 mt-4" href="{% url 'employee-list' %}">უკან დაბრუნება</a>
+        <a class="btn btn-success w-100 mt-4" href="{{ request.META.HTTP_REFERER }}">უკან დაბრუნება</a>
     </div>
 {% endblock content %}
